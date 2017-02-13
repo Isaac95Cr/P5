@@ -1,25 +1,26 @@
 function Walker(){
-  this.x = width/2;
-  this.y = height/2;
+  this.x = 0;//width/2;
+  this.y = 0;//height/2;
 
-  this.move = function(){
-    var n = floor(random(4));
-    if(n == 0){ //up
-      this.y += 1; 
-    }
-    if(n == 1){ //down
-      this.y += -1; 
-    }
-    if(n == 2){ //left
-      this.x += -1; 
-    }
-    if(n == 3){ //rigth
-      this.x += 1; 
-    }
+
+  this.move = function(){ 
+     // totally random
+    // this.x = constrain((random(-1,1)+this.x),0,width);
+   // this.y = constrain((random(-1,1)+this.y),0,height);
+   
+  //random with 50% chances of goin to the mouse 
+   var r = random(1);
+   if(r<0.5){
+    this.x += (mouseX>this.x)? 1 : -1;
+    this.y += (mouseY>this.y)? 1 : -1;
+   }else{
+     this.x = constrain((random(-1,1)+this.x),0,width);
+     this.y = constrain((random(-1,1)+this.y),0,height);
+   } 
   }
 
   this.display = function(){
-    fill(0);
+    fill(255);
     rect(this.x,this.y,2,2);
   };
 }
