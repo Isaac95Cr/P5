@@ -1,6 +1,6 @@
 function Walker(){
-  this.x = 0;//width/2;
-  this.y = 0;//height/2;
+  this.x = width/2;
+  this.y = height/2;
 
 
   this.move = function(){ 
