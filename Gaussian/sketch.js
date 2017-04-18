@@ -6,8 +6,8 @@ function setup() {
 }
 
 function draw() {
-  var x = randomGaussian(width/2,120);
-  var y = randomGaussian(height/2,80);
+  var x = randomGaussian(width/2,100);
+  var y = randomGaussian(height/2,65);
   console.log(x + " "+y);
   noStroke();
   fill(x,x-y,y,100);
